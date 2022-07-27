@@ -1,0 +1,1524 @@
+@import './_mixin.scss';
+@import './_variables.scss';
+@import './_fonts.scss';
+
+
+* {
+  font-family: serif;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: $mainDark;
+}
+
+h1 {
+  position: absolute;
+  right: 9999px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1350px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: $mainDark;
+  margin-bottom: 41px;
+  & .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.menu {
+  margin: 30px 0;
+  @include menu;
+}
+
+.header__search-block {
+  display: flex;
+  margin-left: auto;
+}
+
+.header__search-input {
+  display: none;
+  font-size: 14px;
+  width: 160px;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid $inputColor;
+  font-family: "TTFirsNeueLight";
+  color: $white;
+  transition: border .15s linear;
+  &::placeholder {
+    color: $white;
+  }
+  &:focus, &:hover {
+    border-color: $hoverAndBtnColor;
+  }
+  &:active {
+    border-color: $activeBtnColor;
+  }
+}
+
+.header__search-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  & svg path{
+    transition: fill .15s linear;
+  }
+  &:hover svg path{
+    fill: $hoverAndBtnColor;
+  }
+  &:focus svg path{
+    fill: $hoverAndBtnColor;
+  }
+}
+
+.header__logo {
+  margin-right: 140px;
+}
+
+.news__lastwork {
+  line-height: 24px;
+  margin-bottom: 18px;
+  @include header;
+}
+
+.news .container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 27px 30px;
+  margin-bottom: 67px;
+}
+
+.news__next-masterclass {
+  background: url(../images/MainPicture1.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-left: 59px;
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+}
+
+.news__add-info {
+  color: $white;
+  font-weight: 300;
+}
+
+.news__title {
+  @include header;
+  font-size: 34px;
+  line-height: 38px;
+  color: $white;
+  max-width: 427px;
+  letter-spacing: 1.1px;
+  margin-bottom: 20px;
+}
+
+.hashtag {
+  @include hashtag;
+  top: 15px;
+  right: 15px;
+}
+
+.btn {
+  @include btn-primary
+}
+
+.MainPicture-block {
+  grid-row: 1 / 3;
+  grid-column: 3 / 5;
+  width: 100%;
+}
+
+.MainPicture2 {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.MainPicture3 {
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+  width: 100%;
+  height: 100%;
+  max-height: 257px;
+}
+
+.MainPicture4 {
+  grid-row: 3 / 4;
+  grid-column: 4 / 5;
+  width: 100%;
+  height: 100%;
+  max-height: 257px;
+}
+
+.about-us {
+  background-color: $mainDark;
+  padding-top: 36px;
+  padding-bottom: 69px;
+  margin-bottom: 71px;
+}
+
+.about-us__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.about-us__header {
+  @include header;
+  color: $white;
+}
+
+.about-us__info {
+  padding-top: 5px;
+  letter-spacing: 0.2px;
+  color: $white;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.about-us__camera {
+  padding-top: 2px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-height: 255px;
+  object-fit: cover;
+}
+
+.about-us__subscribe {
+  color: $white;
+  @include header;
+  font-family: "TTFirsNeueLight";
+  font-weight: 400;
+  margin-bottom: 13px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.about-us__input-subscribe-block {
+  margin-right: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.about-us__email-input {
+  @include input;
+  width: 100%;
+  height: 50px;
+}
+
+.about-us__email-error {
+  border: 1px solid $ErrorSubscribe;
+}
+
+.about-us__error-message {
+  opacity: 0;
+  position: absolute;
+  color: $ErrorSubscribe;
+  font-size: 11px;
+  left: 23px;
+  top: 2px;
+}
+
+.projects__header {
+  @include header;
+  margin-bottom: 12px;
+}
+
+.projects__content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.first-card {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+}
+
+.second-card {
+  grid-row: 1 / 2;
+  grid-column: 3 / 5;
+}
+
+.third-card {
+  grid-row: 1 / 2;
+  grid-column: 5 / 7;
+}
+
+.fourth-card {
+  grid-row: 1 / 2;
+  grid-column: 7 / 13;
+  background: url('../images/project4.jpg') no-repeat;
+  background-size: cover;
+}
+
+.fiveth-card {
+  grid-row: 2 / 3;
+  grid-column: 1 / 7;
+  background: url('../images/project5.jpg') no-repeat;
+  background-size: cover;
+
+  & .card__date {
+    margin-bottom: 5px !important;
+  }
+}
+
+.sixth-card {
+  grid-row: 2 / 3;
+  grid-column: 7 / 10;
+}
+
+.seventh-card {
+  grid-row: 2 / 3;
+  grid-column: 10 / 13;
+}
+
+.projects__card {
+  position: relative;
+  & .hashtag {
+    top: 7px;
+    right: 7px;
+  }
+}
+
+.projects__image-card {
+  margin-bottom: 15px;
+  width: 100%;
+  max-height: 184px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__text {
+  height: 66px;
+  line-height: 22px;
+  margin-bottom: 11px;
+  overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+.card__date {
+  color: $dateColor;
+  font-size: 12px;
+  & svg {
+    position: relative;
+    top: 3px;
+  }
+  margin-bottom: 3px;
+}
+
+.projects__big-card {
+  position: relative;
+  padding-left: 30px;
+  padding-top: 22px;
+  padding-bottom: 50px;
+  & .card__date {
+    color: $white;
+    margin-bottom: 8px;
+  }
+  & .hashtag {
+    top: 7px;
+    right: 7px;
+  }
+  & .card__date svg path{
+    fill: $white;
+  }
+  position: relative;
+}
+
+.card__btn {
+  @include btn-project;
+  position: absolute;
+  bottom: 29px;
+}
+
+.card__header {
+  @include header;
+  color: $white;
+  width: 293px;
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+
+.card__info {
+  width: 292px;
+  color: $white;
+  line-height: 22px;
+}
+
+.projects {
+  margin-bottom: 71px;
+}
+
+.contacts__main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 30px;
+  position: relative;
+}
+
+.contacts__map {
+  width: 100%;
+  height: 460px;
+}
+
+.contacts__block-map {
+  grid-column: 1 / 3;
+  position: relative;
+}
+
+.contacts__request {
+  grid-column: 3 / 4;
+}
+
+.contacts__header {
+  @include header;
+  margin-bottom: 22px;
+}
+
+.contacts__address-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(32, 32, 32, 0.85);
+  width: 48.3%;
+  color: $white;
+  padding-top: 173px;
+  padding-left: 60px;
+  color: $white;
+}
+
+.contacts__address-header {
+  @include header;
+  font-family: 'TTFirsNeueLight';
+  color: $white;
+  font-weight: 300;
+}
+
+.contact__address {
+  color: $white;
+  max-width: 300px;
+  line-height: 28px;
+}
+
+.contacts__telephone-number {
+  line-height: 21px;
+  color: $white;
+  position: relative;
+  right: 4px;
+  & svg {
+    position: relative;
+    left: 4px;
+    top: 4px;
+  }
+}
+
+.contacts__btn-close {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 21px;
+  border: none;
+  background: none;
+}
+
+[class*=ground-pane] {
+  filter: grayscale(1)
+}
+
+.contacts__request-header {
+  @include header;
+  font-family: 'TTFirsNeueLight';
+  line-height: 12px;
+  margin-bottom: 12px;
+}
+
+.contacts__application {
+  display: flex;
+  flex-direction: column;
+  & input {
+    @include input;
+    margin-bottom: 21px;
+    height: 50px;
+    background-color: $inputColor;
+    border: 1px solid $inputColor;
+    width: 100%;
+    &:focus::placeholder {
+      color: $hoverAndBtnColor;
+    }
+  }
+}
+
+.contacts__text {
+  @include input;
+  background-color: $inputColor;
+  height: 150px;
+  padding-top: 15px;
+  margin-bottom: 19px;
+}
+
+.contacts__add-info {
+  margin-bottom: 11px;
+  line-height: 22px;
+  color: $dateColor;
+}
+
+.contacts__btn {
+  width: 125px;
+}
+
+.contacts {
+  margin-bottom: 68px;
+}
+
+.contacts__input-subscribe-block {
+  width: 100%;
+  position: relative;
+}
+
+.contacts__error-message {
+  opacity: 0;
+  position: absolute;
+  color: $ErrorColor;
+  font-size: 11px;
+  left: 23px;
+  top: 2px;
+}
+
+.footer {
+  background-color: $mainDark;
+  padding: 23px 0;
+  padding-bottom: 18px;
+  & .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer__main-info, .footer__logo-info, .footer__follow-info {
+  color: $white;
+}
+
+.footer__main-info {
+  width: 486px;
+  padding-right: 125px;
+  line-height: 22px;
+}
+
+.footer__follow-icons {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.header__mobile-menu {
+  display: none;
+}
+
+.ok, .vk {
+  outline: none;
+  & svg path{
+    transition: fill .15s linear;
+  }
+  & svg:hover path {
+    fill: $hoverAndBtnColor;
+  }
+  & svg:active path {
+    fill: $activeBtnColor;
+  }
+  &:focus svg path {
+    fill: $hoverBtnColor;
+  }
+}
+
+.ok svg:first-of-type {
+  margin-right: 20px;
+}
+
+.footer__logo-info {
+  font-family: "TTFirsNeueLight";
+  font-size: 14px;
+}
+
+.footer__follow-info {
+  margin-bottom: 10px;
+}
+
+.footer__logo-block {
+  position: relative;
+  bottom: 4px;
+}
+
+.footer__logo {
+  margin-bottom: 3px;
+}
+
+.contacts__inputs {
+  color: $mainDark !important;
+  border: 1px solid $inputColor;
+  width: 100%;
+  resize: none;
+  padding-right: 20px;
+}
+
+.contacts__email-error {
+  border: 1px solid $ErrorSubscribe !important;
+}
+
+.news__main-info {
+  position: absolute;
+  bottom: 61px;
+}
+
+.header__search-btn-close {
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: none;
+}
+
+.menu__telephone-number {
+  display: none;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.menu__search-btn-close {
+  margin-bottom: 18px;
+  border: none;
+  background: none;
+  & svg {
+    width: 18px;
+    height: 18px;
+  }
+  display: none;
+}
+
+.header .container {
+  overflow: visible;
+}
+
+.contacts__btn-open {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  border: none;
+  background: none;
+  & svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.about-us__subscribe-block {
+  display: flex;
+}
+
+@media (max-width: 1400px) {
+  .header__logo {
+    width: 166px;
+    margin-right: 84px;
+  }
+
+  .projects__big-card {
+    padding-top: 29px;
+  }
+
+  .contacts__request-header {
+    margin-bottom: 10px;
+  }
+
+  .contacts__add-info {
+    margin-bottom: 13px;
+  }
+
+  .menu__item {
+    margin-right: 33px;
+  }
+
+  .card__btn {
+    bottom: 35px;
+  }
+
+  .fiveth-card .card__btn {
+    bottom: 26px;
+  }
+
+  .header {
+    margin-bottom: 34px;
+  }
+
+  .news__lastwork {
+    margin-bottom: 26px;
+  }
+
+  .MainPicture2 {
+    max-height: 332px;
+  }
+
+  .contacts__telephone-number {
+    font-family: "TTFirsNeueNormal";
+    color: $hoverAndBtnColor;
+    & svg {
+      width: 20px;
+      height: 20px;
+      & path {
+        fill : $hoverAndBtnColor
+      }
+    }
+  }
+
+  .footer {
+    padding-bottom: 17px;
+  }
+
+  .contacts__address-header {
+    line-height: 22px;
+  }
+
+  .contact__address {
+    line-height: 28px;
+    position: relative;
+    top: 5px;
+  }
+
+  .news .container {
+    margin-bottom: 67px;
+  }
+
+  .about-us__camera {
+    height: 100%;
+    max-height: 332px;
+  }
+
+  .about-us__subscribe-block {
+    display: block;
+  }
+
+  .about-us__email-input {
+    margin-bottom: 21px;
+  }
+
+  .about-us__input-subscribe-block {
+    padding-right: 125px;
+  }
+
+  .about-us {
+    padding-bottom: 82px;
+    margin-bottom: 67px;
+  }
+
+  .projects__content {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 26px 30px;
+  }
+
+  .first-card {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  .second-card {
+    grid-row: 1 / 2;
+    grid-column: 3 / 5;
+  }
+
+  .third-card {
+    grid-row: 1 / 2;
+    grid-column: 5 / 9;
+  }
+
+  .fourth-card {
+    grid-row: 2 / 3;
+    grid-column: 1 / 6;
+    background: url('../images/project4.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .fiveth-card {
+    grid-row: 3 / 4;
+    grid-column: 4 / 9;
+    background: url('../images/project5.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .sixth-card {
+    grid-row: 2 / 3;
+    grid-column: 6 / 9;
+  }
+
+  .seventh-card {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+  }
+
+  .card__text {
+    height: 50px;
+    padding-right: 7px;
+  }
+
+  .card__big-text {
+    height: 66px;
+    margin-bottom: 15px;
+  }
+
+  .projects {
+    margin-bottom: 73px;
+  }
+
+  .about-us__subscribe {
+    font-family: "TTFirsNeueLight";
+    font-weight: 400;
+  }
+
+  .contacts__main-content {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .contacts__block-map {
+    grid-column: 1 / 6;
+  }
+
+  .contacts__request {
+    grid-column: 6 / 9;
+  }
+
+  .contacts__address-info {
+    padding-top: 25px;
+    padding-left: 30px;
+    top: auto;
+    width: auto;
+    right: 0;
+  }
+
+  .footer__main-info {
+    padding: 0;
+    width: 426px;
+    padding-left: 65px;
+    padding-top: 2px;
+  }
+
+  .footer__logo {
+    width: 166px;
+    margin-bottom: 2px;
+  }
+
+  .header__search-input {
+    width: 120px;
+  }
+
+  .footer__logo-block {
+    position: static;
+  }
+
+  .news__next-masterclass {
+    padding-left: 31px;
+  }
+
+  .news__main-info {
+    bottom: 31px;
+  }
+
+  .news__title {
+    margin-bottom: 23px;
+    letter-spacing: normal;
+    line-height: 100%;
+  }
+
+  .news__add-info {
+    margin-bottom: 10px;
+  }
+
+  .MainPicture3 {
+    max-height: 186px;
+  }
+
+  .MainPicture4 {
+    max-height: 186px;
+  }
+}
+
+@media (max-width: 1010px) {
+
+  .footer__logo {
+    margin-bottom: 3px;
+  }
+
+  .footer__follow {
+    position: relative;
+    top: 5px;
+  }
+
+  .projects {
+    margin-bottom: 69px;
+  }
+
+  .about-us__error-message {
+    font-size: 9px;
+    left: 25px;
+  }
+
+  .contacts__error-message {
+    font-size: 9px;
+    left: 22px;
+  }
+
+  .contact__address {
+    max-width: 436px;
+    position: relative;
+    top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .fiveth-card .card__btn {
+    bottom: 29px;
+  }
+
+  .news .container {
+    margin-bottom: 69px;
+    grid-gap: 24px 30px;
+  }
+
+  .card__btn {
+    bottom: 28px;
+  }
+
+  .container {
+    padding: 0 27px;
+  }
+
+  .contacts__request-header {
+    line-height: 13px;
+  }
+
+  .header__search-input {
+    width: 308px;
+    margin-right: 10px;
+  }
+
+  .menu {
+    background: #4A4A4A;
+    position: absolute;
+    top: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 27px;
+    justify-content: space-between;
+    &__item {
+      margin: 0;
+    }
+  }
+
+  .header {
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  .header__logo {
+    padding: 27px 0;
+    margin-right: auto;
+  }
+
+  .contacts__telephone-number {
+    margin-bottom: 25px;
+    letter-spacing: 0.05px;
+  }
+
+  .news__lastwork {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 17px;
+  }
+
+  .news__next-masterclass {
+    padding-left: 28px;
+  }
+
+  .news__main-info {
+    bottom: 29px;
+  }
+
+  .news__title {
+    width: 239px;
+    line-height: 90%;
+    margin-bottom: 23px;
+    letter-spacing: normal;
+  }
+
+  .news__add-info {
+    margin-bottom: 15px;
+  }
+
+  .MainPicture2 {
+    max-height: 228px;
+  }
+
+  .about-us__camera {
+    max-height: 569px;
+  }
+
+  .about-us__input-subscribe-block {
+    padding: 0;
+  }
+
+  .about-us {
+    padding-bottom: 63px;
+    padding-top: 33px;
+    margin-bottom: 70px;
+  }
+
+  .projects__content {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 30px 30px;
+  }
+
+  .card__text {
+    height: 63px;
+    padding: 0;
+    margin-bottom: 13px;
+  }
+
+  .card__date {
+    margin-bottom: 0;
+  }
+
+  .first-card {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  .second-card {
+    grid-row: 1 / 2;
+    grid-column: 3 / 5;
+  }
+
+  .third-card {
+    grid-row: 1 / 2;
+    grid-column: 5 / 7;
+  }
+
+  .fourth-card {
+    grid-row: 2 / 3;
+    grid-column: 1 / 7;
+    background: url('../images/project4.jpg') no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+
+  .fiveth-card {
+    grid-row: 4 / 5;
+    grid-column: 1 / 7;
+    background: url('../images/project5.jpg') no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+
+  .sixth-card {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+  }
+
+  .seventh-card {
+    grid-row: 3 / 4;
+    grid-column: 4 / 7;
+  }
+
+  .card__big-text {
+    margin-bottom: 19px;
+  }
+
+  .contacts__main-content {
+    grid-template-columns: 100%;
+  }
+
+  .contacts__block-map {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .contacts__request {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .contacts__add-info {
+    width: 466px;
+    margin-bottom: 12px;
+  }
+
+  .contacts__application {
+    padding-right: 248px;
+  }
+
+  .footer__main-info {
+    display: none;
+  }
+}
+
+@media (max-width: 740px) {
+
+  .container {
+    padding: 0 21px;
+  }
+
+  .header__logo {
+    padding: 26px 0;
+    width: 112px;
+  }
+
+  .header__search-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header {
+    margin-bottom: 73px;
+  }
+
+  .about-us__subscribe {
+    margin-bottom: 14px;
+  }
+
+  .news .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    margin-bottom: 44px;
+  }
+
+  .news__next-masterclass {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  .MainPicture-block {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+
+  .MainPicture3 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+
+  .MainPicture4 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+
+  .news__next-masterclass {
+    height: 422px;
+  }
+
+  .news__title {
+    margin: 0;
+    font-size: 24px;
+    width: 169px;
+    margin-bottom: 15px;
+    line-height: 110%;
+    position: relative;
+    right: 2px;
+  }
+
+  .news__add-info {
+    margin-bottom: 7px;
+    font-size: 14px;
+  }
+
+  .news__next-masterclass {
+    padding-left: 30px;
+  }
+
+  .news__main-info {
+    bottom: 28px;
+  }
+
+  .header__mobile-menu {
+    display: block;
+    background: #4A4A4A;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  .header__mobile-menu-btn {
+    border: none;
+    background: none;
+    padding: 14px 21px 9px;
+  }
+
+  .news__lastwork {
+    font-size: 18px;
+    padding-top: 7px;
+    line-height: 104%;
+  }
+
+  .MainPicture2 {
+    max-height: 186px;
+  }
+
+  .MainPicture3, .MainPicture4 {
+    position: relative;
+    bottom: 6px;
+    max-height: 105px;
+  }
+
+  .about-us__content {
+    display: block;
+  }
+
+  .about-us {
+    padding-bottom: 59px;
+    margin-bottom: 52px;
+  }
+
+  .about-us__info {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 21px;
+    min-width: 279px;
+  }
+
+  .about-us__camera {
+    min-height: 279px;
+    margin-bottom: 25px;
+  }
+
+  .about-us__email-input {
+    height: 40px;
+  }
+
+  .projects__content {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+
+  .first-card {
+    grid-row: 1;
+    grid-column: 1 / 2;
+  }
+
+  .second-card {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .third-card {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+
+  .fourth-card {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+    height: 300px;
+  }
+
+  .fiveth-card {
+    grid-row: 7 / 8;
+    grid-column: 1 / 2;
+    height: 300px;
+  }
+
+  .sixth-card {
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
+  }
+
+  .seventh-card {
+    grid-row: 6 / 7;
+    grid-column: 1 / 2;
+  }
+
+  .projects__header {
+    margin-bottom: 16px;
+  }
+
+  .card__text {
+    margin-bottom: 8px;
+    height: 44px;
+  }
+
+  .projects__big-card {
+    height: 422px;
+  }
+
+  .projects__card {
+    min-height: 272px;
+  }
+
+  .projects__big-card {
+    padding-top: 196px;
+    & .card__date {
+      margin-bottom: 11px;
+    }
+    & .card__header {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    & .card__info {
+      max-width: 218px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  .fiveth-card .card__btn {
+    bottom: 30px;
+  }
+
+  .fiveth-card {
+    & .card__date {
+      margin-bottom: 11px !important;
+    }
+  }
+
+  .card__btn {
+    bottom: 30px;
+  }
+
+  .card__big-text {
+    height: 66px;
+  }
+
+  .sixth-card, .seventh-card {
+    height: 295px;
+  }
+
+  .hashtag-projects, .projects__card .hashtag, .projects__big-card .hashtag{
+    padding: 4px 14px;
+    top: 5px;
+    right: 5px;
+    line-height: 14px;
+  }
+
+  .projects {
+    margin-bottom: 51px;
+  }
+
+  .contacts__header {
+    margin-bottom: 13px;
+    padding-left: 21px;
+  }
+
+  .contacts .container {
+    padding: 0;
+  }
+
+  .contacts__address-info {
+    padding-left: 20px;
+  }
+
+  .contacts__block-map {
+    height: 472px;
+  }
+
+  .contacts__address-info {
+    padding-top: 25px;
+  }
+
+  .contacts__address-header {
+    margin-bottom: 8px;
+  }
+
+  .contact__address {
+    line-height: 18px;
+    font-size: 14px;
+    margin-bottom: 7px;
+    max-width: 267px;
+  }
+
+  .contacts__telephone-number {
+    font-family: "TTFirsNeueNormal";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 14px;
+    position: relative;
+    right: 7px;
+    letter-spacing: 0.1px;
+  }
+
+  .contacts__request {
+    padding: 0 21px;
+  }
+
+  .contacts__add-info {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 17px;
+  }
+
+  .contacts__application input {
+    height: 40px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .contacts__application {
+    padding: 0;
+  }
+
+  .contacts__text {
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 10px;
+  }
+
+  .contacts__btn {
+    width: 115px;
+  }
+
+  .contacts {
+    margin-bottom: 48px;
+  }
+
+  .footer .container {
+    flex-direction: column-reverse;
+  }
+
+  .footer__logo {
+    width: 112px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 4px;
+  }
+
+  .footer {
+    padding-top: 32px;
+    padding-bottom: 0;
+  }
+
+  .footer__follow {
+    position: static;
+    margin-bottom: 28px;
+  }
+
+  .footer__logo-info {
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: column;
+    background: $mainDark;
+    padding: 0;
+  }
+
+  .mobile-menu {
+    padding: 0 21px;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    z-index: 100;
+    background: $mainDark;
+    height: calc(100vh - 70px);
+  }
+
+  .menu__telephone-number {
+    display: block;
+    font-family: "TTFirsNeueNormal";
+    letter-spacing: 0.5px;
+    color: $white;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $hoverAndBtnColor;
+    & svg {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      left: 4px;
+      top: 4px;
+      & path {
+        fill : $hoverAndBtnColor
+      }
+    }
+  }
+
+  .menu__item {
+    margin-bottom: 30px;
+  }
+
+  .menu__telephone-number {
+    position: absolute;
+    bottom: 38px;
+    & p {
+      color: $hoverAndBtnColor;
+    }
+  }
+
+  .header__search-block, .header__search-input {
+    justify-content: right;
+    width: 100%;
+  }
+
+  .header__search-input {
+    margin: 26px 0 26.5px 0;
+  }
+
+  .footer__logo-block {
+    background: $subcribeInputColors;
+    width: 100%;
+    padding: 0 -21px;
+    padding-bottom: 15px;
+    padding-top: 14px;
+  }
+
+  .footer .container {
+    padding: 0;
+  }
+
+  .is-active {
+    display: block;
+  }
+
+  .is-inactive {
+    display: none;
+  }
+}

@@ -1,0 +1,166 @@
+@import './_variables.scss';
+@import './_fonts.scss';
+
+
+
+@mixin btn-primary {
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: $hoverAndBtnColor;
+  color: $white;
+  padding: 12px 20px;
+  border: 3px solid $hoverAndBtnColor;
+  transition: background .3s linear, border .3s linear;
+  &:hover {
+    background: $hoverBtnColor;
+  }
+  &:focus {
+    background-color: $hoverAndBtnColor;
+    border: 3px solid $activeBtnColor;
+  }
+  &:active {
+    background: $activeBtnColor;
+    border-color: $activeBtnColor;
+  }
+  @media (max-width: 740px) {
+    & {
+      font-size: 14px;
+      padding: 9px 19px;
+    }
+  }
+}
+
+@mixin btn-project {
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  background: none;
+  color: $white;
+  padding: 13px 18px;
+  border: 3px solid $hoverAndBtnColor;
+  transition: background .3s linear, border .3s linear;
+  &:hover {
+    background: $hoverAndBtnColor;
+  }
+  &:focus {
+    background-color: $hoverBtnColor;
+    border: 3px solid $hoverAndBtnColor;
+  }
+  &:active {
+    background: $activeBtnColor;
+    border: 3px solid $activeBtnColor;
+  }
+  @media (max-width: 740px) {
+    & {
+      font-size: 14px;
+      padding: 9px 17px;
+    }
+  }
+}
+
+@mixin header {
+  font-family: "TTFirsNeueBold";
+  font-weight: 700;
+  font-size: 24px;
+
+  @media (max-width: 740px) {
+    & {
+      font-size: 18px;
+    }
+  }
+}
+
+@mixin menu {
+  display: flex;
+  margin-right: auto;
+  &__item {
+    color: $white;
+    font-weight: 400;
+    margin-right: 79px;
+    &:last-of-type {
+      margin: 0;
+    }
+    & a {
+      font-family: "TTFirsNeueLight";
+      color: $white;
+      text-decoration: none;
+      transition: color .3s linear;
+      outline: none;
+      position: relative;
+    }
+    & a:hover {
+      color: $hoverAndBtnColor;
+      &::after {
+        transform: scaleX(0) !important;
+      }
+    }
+    & a:active {
+      color: $activeBtnColor;
+      &::after {
+        transform: scaleX(0) !important;
+      }
+    }
+    & a::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+      z-index: -1;
+      background-color: $hoverBtnColor;
+      transform: scaleX(0);
+      transition: transform .3s linear, color .3s linear;
+    }
+    & a:focus {
+      color: $white;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+@mixin hashtag {
+  text-decoration: none;
+  line-height: 16px;
+  color: $white;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 7px 15px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background-color: $mainDark;
+  @media (max-width: 740px) {
+    & {
+      font-size: 12px;
+      padding: 4px 7px;
+      top: 6px;
+      right: 5px;
+    }
+  }
+}
+
+@mixin input {
+  background-color: $subcribeInputColors;
+  border: 1px solid $subcribeInputColors;
+  padding-left: 23px;
+  outline: none;
+  &:focus {
+    border: 1px solid $hoverAndBtnColor;
+  }
+  &::placeholder {
+    color: $textonBlackColor;
+    transition: color .15s linear;
+  }
+  &:hover::placeholder {
+    color: $hoverAndBtnColor;
+  }
+  &:focus::placeholder {
+    color: $white;
+  }
+  color: $white;
+}

@@ -1,5 +1,6 @@
 # High-Pass
-![image](https://user-images.githubusercontent.com/72502985/190441262-095b32df-6129-4a02-86bb-9caf6141210c.png)
+![image](https://user-images.githubusercontent.com/72502985/190441440-15932700-a027-4eac-b975-a76761146dd8.png)
+
 
 
 Ссылка на сайт: https://high-pass-build.vercel.app/
